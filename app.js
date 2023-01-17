@@ -9,6 +9,12 @@ class Timer {
 
     start = () => {
         console.log('Clicked strat button');
+        this.tick();
+        setInterval(this.tick, 1000);
+    }
+
+    tick = () => {
+        console.log('tick');
     }
 }
 
