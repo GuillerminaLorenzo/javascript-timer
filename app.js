@@ -9,7 +9,7 @@ class Timer {
     }
 
     start = () => {
-        console.log('Clicked strat button');
+        
         this.tick();
         this.interval = setInterval(this.tick, 1000);
     }
@@ -19,8 +19,15 @@ class Timer {
     }
 
     tick = () => {
-        const timeLeft = parseFloat(this.durationInput.value);
-        this.durationInput.value = timeLeft - 1;
+        this.timeLeft = this.timeLeft - 1;
+    }
+
+    get timeLeft() {
+        return parseFloat(this.durationInput.value);
+    }
+
+    set timeLeft(time) {
+        this.durationInput.value = time;
     }
 }
 
