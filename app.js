@@ -19,7 +19,11 @@ class Timer {
     }
 
     tick = () => {
-        this.timeLeft = this.timeLeft - 1;
+        if (this.timeLeft <= 0) {
+            this.pause();
+        } else {
+            this.timeLeft = this.timeLeft - 1;
+        }
     }
 
     get timeLeft() {
