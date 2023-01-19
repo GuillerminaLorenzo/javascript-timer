@@ -5,6 +5,7 @@ class Timer {
         this.pauseButton = pauseButton;
         if (callback) {
             this.onStart = callback.onStart;
+            this.onTick = callback.onTick;
         }
 
         this.startButton.addEventListener('click', this.start);
@@ -27,6 +28,9 @@ class Timer {
         if (this.timeLeft <= 0) {
             this.pause();
         } else {
+            if (this.onTick){
+                this.onTick();
+            }
             this.timeLeft = this.timeLeft - 1;
         }
     }
@@ -47,5 +51,8 @@ const pauseButton = document.querySelector("#pause");
 const timer = new Timer(durationInput, startButton, pauseButton, {
     onStart() {
         console.log('Timer started');
+    },
+    onTick() {
+        console.log('Timer ticked down');
     }
 })
