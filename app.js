@@ -6,6 +6,7 @@ class Timer {
         if (callback) {
             this.onStart = callback.onStart;
             this.onTick = callback.onTick;
+            this.onPause = callback.onPause;
         }
 
         this.startButton.addEventListener('click', this.start);
@@ -21,6 +22,9 @@ class Timer {
     }
 
     pause = () => {
+        if (this.onPause) {
+            this.onPause();
+        }
         clearInterval(this.interval);
     }
 
@@ -54,5 +58,8 @@ const timer = new Timer(durationInput, startButton, pauseButton, {
     },
     onTick() {
         console.log('Timer ticked down');
+    },
+    onPause() {
+        console.log('Timer paused');
     }
 })
