@@ -13,7 +13,7 @@ const timer = new Timer(durationInput, startButton, pauseButton, {
     },
     onTick() {
         circle.setAttribute('stroke-dashoffset', currentOffset);
-        currentOffset = currentOffset - 50;
+        currentOffset = currentOffset - 1;
     },
     onPause() {
         console.log('Timer paused');
