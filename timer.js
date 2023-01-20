@@ -15,7 +15,7 @@ class Timer {
 
     start = () => {
         if (this.onStart) {
-            this.onStart();
+            this.onStart(this.timeLeft);
         }
         this.tick();
         this.interval = setInterval(this.tick, 50);
@@ -32,10 +32,10 @@ class Timer {
         if (this.timeLeft <= 0) {
             this.pause();
         } else {
-            if (this.onTick){
-                this.onTick();
-            }
             this.timeLeft = this.timeLeft - .05;
+            if (this.onTick){
+                this.onTick(this.timeLeft);
+            }
         }
     }
 
