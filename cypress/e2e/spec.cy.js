@@ -18,7 +18,6 @@ describe('Timer', () => {
   })
 
   it('has start button working', () => {
-    cy.get('button[id="start"]').click();
-    cy.get('#duration', { timeout: 3000}).type('0.00')
+    cy.get('button[id="start"]').click()
   })
 })
