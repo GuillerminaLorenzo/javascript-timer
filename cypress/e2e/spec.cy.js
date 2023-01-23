@@ -26,4 +26,17 @@ describe('Timer', () => {
     cy.wait(1000)
     cy.get('button[id="pause"]').click()
   })
+
+  it('has a circle', () => {
+    cy.get('svg').within(() => {
+      cy.get("circle").then(circle => {
+        cy.log("X-coordinate : "+circle.attr("cx"));
+        cy.log("Y-coordinate : "+circle.attr("cy"));
+        cy.log("Radius : "+circle.attr("r"));
+        cy.log("Stroke : "+circle.attr("stroke"));
+        cy.log("Stroke Width : "+circle.attr("stroke-width"));
+        cy.log("Fill Color : "+circle.attr("fill"));
+      });
+    })
+  })
 })
