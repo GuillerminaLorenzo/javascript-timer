@@ -20,4 +20,10 @@ describe('Timer', () => {
   it('has start button working', () => {
     cy.get('button[id="start"]').click()
   })
+
+  it('has pause button working', () => {
+    cy.get('button[id="start"]').click()
+    cy.wait(1000)
+    cy.get('button[id="pause"]').click()
+  })
 })
