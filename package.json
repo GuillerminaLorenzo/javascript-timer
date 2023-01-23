@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "test",
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "cypress": "node ./node_modules/cypress/bin/cypress run"
   },
   "repository": {
     "type": "git",
