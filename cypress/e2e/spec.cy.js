@@ -12,4 +12,8 @@ describe('Timer', () => {
       .should('have.class', 'timer')
       .and('have.class', 'controls');
   })
+
+  it('has input duration', () => {
+    cy.get('#duration').type('number');
+  })
 })
