@@ -4,6 +4,12 @@ describe('Timer', () => {
   })
 
   it('has a title', () => {
-    cy.get("title").should("contain", "Timer");
+    cy.get('title').should('contain', 'Timer');
+  })
+
+  it('has a div timer and div controls inside', () => {
+    cy.get('div')
+      .should('have.class', 'timer')
+      .and('have.class', 'controls');
   })
 })
