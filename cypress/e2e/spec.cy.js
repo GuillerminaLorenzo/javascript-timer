@@ -14,6 +14,7 @@ describe('Timer', () => {
   })
 
   it('has input duration', () => {
-    cy.get('#duration').type('number');
+    cy.get('input[id="duration"]').type('number');
   })
+
 })
